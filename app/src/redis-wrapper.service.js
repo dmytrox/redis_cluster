@@ -49,7 +49,16 @@ export class RedisWrapper {
       
       if (!data || this.getCurrentTimeInSeconds() - delta * this.BETA * Math.log(Math.floor(Math.random() * 2)) >= expire){
           let start = this.getCurrentTimeInSeconds();        
-          data = {test: "test"};   
+          data = {
+            test: "test",
+            test1: "test",
+            test2: "test",
+            test3: "test",
+            test4: "test",
+            test5: "test",
+            test6: "test",
+            test7: "test"
+          };   
           delta = this.getCurrentTimeInSeconds() - start;            
           expire = this.getCurrentTimeInSeconds() + this.TTL;
           this.set(key, {delta, expire, data}, this.TTL);
